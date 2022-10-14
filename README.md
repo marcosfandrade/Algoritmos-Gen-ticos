@@ -1,2 +1,2 @@
-# Algoritmos-Gen-ticos
+# Algoritmos-Geneticos
 Algoritmos genéticos para cadeira de IA
