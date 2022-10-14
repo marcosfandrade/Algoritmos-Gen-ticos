@@ -16,5 +16,13 @@ public class TournamentSelection {
             return population.getFittest((int) (Math.random() * population.size()));
         }
     }
+
+    public void setTournamentSelection(boolean tournamentSelection) {
+        this.tournamentSelection = tournamentSelection;
+    }
+
+    public boolean getTournamentSelection() {
+        return this.tournamentSelection;
+    }
     
 }

@@ -1,6 +1,5 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        System.out.println(fitnessFunction(2, 1));
         // generate a generic function and find the best solution
         GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.9, 2, true);
         Population population = ga.initPopulation(50);

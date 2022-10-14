@@ -4,6 +4,7 @@ public class GeneticAlgorithm {
     private double crossoverRate;
     private int elitismCount;
     private TournamentSelection tournamentSelection;
+    private boolean elitism;
 
     public GeneticAlgorithm(int populationSize, double mutationRate, double crossoverRate, int elitismCount, boolean tournamentSelection) {
         this.populationSize = populationSize;
@@ -51,7 +52,7 @@ public class GeneticAlgorithm {
             Individual parent1 = population.getFittest(populationIndex);
             if (this.crossoverRate > Math.random() && populationIndex >= this.elitismCount) {
                 Individual offspring = new Individual(parent1.getChromosomeLength());
-                Individual parent2 = this.tournament.selection(population);
+                Individual parent2 = this.tournamentSelection.select(population);
                 for (int geneIndex = 0; geneIndex < parent1.getChromosomeLength(); geneIndex++) {
                     if (0.5 > Math.random()) {
                         offspring.setChromosome(geneIndex, parent1.getChromosome(geneIndex));

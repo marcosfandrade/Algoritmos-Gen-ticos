@@ -61,5 +61,25 @@ public class Population {
         }
         return populationString;
     }
+
+    public void sortIndividuals() {
+        Arrays.sort(this.individuals, new Comparator<Individual>() {
+            @Override
+            public int compare(Individual o1, Individual o2) {
+                if (o1.getFitness() > o2.getFitness()) {
+                    return -1;
+                } else if (o1.getFitness() < o2.getFitness()) {
+                    return 1;
+                }
+                return 0;
+            }
+        });
+    }
+
+    public void setPopulationFitness(double fitness) {
+        for (int individualCount = 0; individualCount < this.individuals.length; individualCount++) {
+            this.individuals[individualCount].setFitness(fitness);
+        }
+    }
     
 }
