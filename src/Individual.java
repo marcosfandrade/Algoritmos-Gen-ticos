@@ -2,6 +2,8 @@ public class Individual {
 
     private double[] chromosome;
     private double fitness = -1;
+    // gene
+    private double gene;
 
     public Individual(double[] chromosome) {
         this.chromosome = chromosome;
@@ -44,6 +46,4 @@ public class Individual {
         }
         return output;
     }
-
-    
 }

@@ -27,12 +27,10 @@ public class GeneticAlgorithm {
     }
 
     private double calcFitness(Individual individual) {
-        // Fitness function = 1 / (1 + x)
-        // double fitness = 1 / (1 + Math.abs(individual.getChromosome(0)));
-        // Fitness function = x1 - x2
-        // double fitness = individual.getChromosome(0) - individual.getChromosome(1);
-        // Fitness function = (x1 - log(x2)) / (x1^2 - 3x2)
-        double fitness = (individual.getChromosome(0) - Math.log(individual.getChromosome(1))) / (Math.pow(individual.getChromosome(0), 2) - 3 * individual.getChromosome(1));
+        double x1 = individual.getChromosome(0);
+        double x2 = individual.getChromosome(1);
+        double fitness = x1 - x2; 
+        // double fitness = (x1 - Math.log(x2)) / (Math.pow(x1, 2) - 3 * x2);
         individual.setFitness(fitness);
         return fitness;
     }

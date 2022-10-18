@@ -5,7 +5,7 @@ public class App {
         Population population = ga.initPopulation(50);
         ga.evalPopulation(population);
         int generation = 1;
-        while (ga.isTerminationConditionMet(population) == false) {
+        while (ga.isTerminationConditionMet(population) == false && generation <= 1000) {
             System.out.println("Generation: " + generation + " Fittest: " + population.getFittest(0).getFitness());
             population = ga.crossoverPopulation(population);
             population = ga.mutatePopulation(population);
@@ -16,10 +16,5 @@ public class App {
         System.out.println("Generation: " + generation);
         System.out.println("Genes:");
         System.out.println(population.getFittest(0).toString());
-    }
-
-    public static double fitnessFunction(double x1, double x2) {
-        // return x1 - x2;
-        return (x1 - Math.log(x2)) / (Math.pow(x1, 2) - 3 * x2);
     }
 }
