@@ -29,13 +29,14 @@ public class GeneticAlgorithm {
     private double calcFitness(Individual individual) {
         double x1 = individual.getChromosome(0);
         double x2 = individual.getChromosome(1);
-        double fitness = x1 - x2; 
-        // double fitness = (x1 - Math.log(x2)) / (Math.pow(x1, 2) - 3 * x2);
+        // double fitness = x1 - x2; 
+        double fitness = (x1 - Math.log(x2)) / (Math.pow(x1, 2) - 3 * x2);
         individual.setFitness(fitness);
         return fitness;
     }
 
     public boolean isTerminationConditionMet(Population population) {
+        // condition to terminate if generation is not variable in 30 generations
         for (Individual individual : population.getIndividuals()) {
             if (individual.getFitness() == 1) {
                 return true;
