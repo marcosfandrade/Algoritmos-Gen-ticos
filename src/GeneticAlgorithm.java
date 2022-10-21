@@ -6,7 +6,8 @@ public class GeneticAlgorithm {
     private TournamentSelection tournamentSelection;
     private boolean elitism;
 
-    public GeneticAlgorithm(int populationSize, double mutationRate, double crossoverRate, int elitismCount, boolean tournamentSelection) {
+    public GeneticAlgorithm(int populationSize, double mutationRate, double crossoverRate, int elitismCount,
+            boolean tournamentSelection) {
         this.populationSize = populationSize;
         this.mutationRate = mutationRate;
         this.crossoverRate = crossoverRate;
@@ -29,7 +30,7 @@ public class GeneticAlgorithm {
     private double calcFitness(Individual individual) {
         double x1 = individual.getChromosome(0);
         double x2 = individual.getChromosome(1);
-        // double fitness = x1 - x2; 
+        // double fitness = x1 - x2;
         double fitness = (x1 - Math.log(x2)) / (Math.pow(x1, 2) - 3 * x2);
         individual.setFitness(fitness);
         return fitness;
@@ -72,11 +73,9 @@ public class GeneticAlgorithm {
         for (int populationIndex = 0; populationIndex < population.size(); populationIndex++) {
             Individual individual = population.getFittest(populationIndex);
             for (int geneIndex = 0; geneIndex < individual.getChromosomeLength(); geneIndex++) {
-                if (populationIndex > this.elitismCount) {
-                    if (this.mutationRate > Math.random()) {
-                        double newGene = 1 + Math.random();
-                        individual.setChromosome(geneIndex, newGene);
-                    }
+                if (populationIndex > this.elitismCount && this.mutationRate > Math.random()) {
+                    double newGene = 1 + Math.random();
+                    individual.setChromosome(geneIndex, newGene);
                 }
             }
             newPopulation.setIndividual(populationIndex, individual);
