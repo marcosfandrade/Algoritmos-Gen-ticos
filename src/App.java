@@ -1,6 +1,6 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.01, 0.9, 2, true);
+        GeneticAlgorithm ga = new GeneticAlgorithm(100, 0.05, 0.9, 2, true);
         Population population = ga.initPopulation(50);
         ga.evalPopulation(population);
         int generation = 1;
