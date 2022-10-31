@@ -9,10 +9,6 @@ public class Population {
     private double min = -100000;
     private double max = 100000;
 
-    // public Population(int populationSize) {
-    //     this.individuals = new Individual[populationSize];
-    // }
-
     public Population(int populationSize) {
         this.individuals = new Individual[populationSize];
         Random rand = new Random();

@@ -15,7 +15,7 @@ public class GeneticAlgorithm {
         this.tournamentSelection = new TournamentSelection(tournamentSelection);
     }
 
-    public Population initPopulation(int chromosomeLength) {
+    public Population initPopulation() {
         return new Population(this.populationSize);
     }
 
