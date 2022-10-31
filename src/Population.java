@@ -23,10 +23,6 @@ public class Population {
             Individual individual = new Individual(x);
             this.individuals[individualCount] = individual;
         }
-        // for (int individualCount = 0; individualCount < populationSize; individualCount++) {
-        //     Individual individual = new Individual(chromosomeLength);
-        //     this.individuals[individualCount] = individual;
-        // }
     }
 
     public Individual[] getIndividuals() {
