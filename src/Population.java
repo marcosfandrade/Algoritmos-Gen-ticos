@@ -9,11 +9,11 @@ public class Population {
     private double min = -100000;
     private double max = 100000;
 
-    public Population(int populationSize) {
-        this.individuals = new Individual[populationSize];
-    }
+    // public Population(int populationSize) {
+    //     this.individuals = new Individual[populationSize];
+    // }
 
-    public Population(int populationSize, int chromosomeLength) {
+    public Population(int populationSize) {
         this.individuals = new Individual[populationSize];
         Random rand = new Random();
         double[] x = new double[2];

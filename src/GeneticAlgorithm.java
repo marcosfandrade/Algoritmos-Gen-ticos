@@ -16,7 +16,7 @@ public class GeneticAlgorithm {
     }
 
     public Population initPopulation(int chromosomeLength) {
-        return new Population(this.populationSize, chromosomeLength);
+        return new Population(this.populationSize);
     }
 
     public void evalPopulation(Population population) {
