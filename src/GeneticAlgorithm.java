@@ -4,7 +4,6 @@ public class GeneticAlgorithm {
     private double crossoverRate;
     private int elitismCount;
     private TournamentSelection tournamentSelection;
-    private boolean elitism;
 
     public GeneticAlgorithm(int populationSize, double mutationRate, double crossoverRate, int elitismCount,
             boolean tournamentSelection) {
@@ -81,10 +80,6 @@ public class GeneticAlgorithm {
             newPopulation.setIndividual(populationIndex, individual);
         }
         return newPopulation;
-    }
-
-    public void setElitism(boolean elitism) {
-        this.elitism = elitism;
     }
 
     public void setElitismCount(int elitismCount) {
